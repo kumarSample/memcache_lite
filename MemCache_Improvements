@@ -49,3 +49,4 @@ protocol.
 
 -  There are also all protocol error messages I could have handled , which I dont handle currently
 
+-  I have used a infinite while loop to handle the incoming client requests, which could be improved upon.
