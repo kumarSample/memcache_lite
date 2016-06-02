@@ -1,0 +1,51 @@
+MemCache
+--------
+
+I have just implemented the memcache binary protocol server GET and SET 
+methods as per the spec.
+
+For the memcache I used the std::map provided by  c++ boost library
+
+
+Improvements
+------------
+
+- I have used a global hashmap for the cache implementation which is probably not the best 
+  approach.
+
+- This could be improved by a better hash function which could be implemented taking in 
+to consideration the 2 byte key length and 1 MB limit for the value.
+
+
+
+Concurrency
+-----------
+
+For concurrency , I have just used a basic pthread_lock()  and pthread_unlock()
+
+methods whenever the GET and SET methods are called on the server.
+
+I have'nt handled conditions where there could be multiple clients calling server 
+at the same time 
+
+
+Improvements
+------------
+
+-  The server could be modified to handle multiple clients at the same time and using
+
+more robust threading and synchronization mechanisms.
+
+
+General Improvements
+--------------------
+
+-  I could have made the code more easily extendable and scalable to add other methods of the memcache binary
+protocol. 
+
+
+-  There could be more potential memory leak checks I can add to the code to make it more reliable.
+
+
+-  There are also all protocol error messages I could have handled , which I dont handle currently
+

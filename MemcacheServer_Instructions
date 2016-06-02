@@ -1,0 +1,62 @@
+
+Compiling the server
+--------------------
+
+Dependencies  :  boost library , c++ 
+
+g++ -o  server  server.cpp
+
+running the server
+------------------
+
+./server  20001  
+
+where 2001 is the port number for example 
+
+
+
+Compiling the client
+--------------------
+
+g++ -o  client  client.cpp
+
+running the client
+------------------
+
+./client hostip  20001  
+
+where 2001 is the port number used for the server
+
+
+
+Testing the server
+------------------
+
+In order to test the server ,  I hard coded the request packet inside 
+
+client.cpp    and recompiling for each of the methods
+
+
+test the GET method
+-------------------
+
+lines 105 - 110    to  by hard coding values of buffer.
+
+keylength =  5    buffer[11] = 0x05; 
+
+keyvalue  = "Hello"   ( for example)
+
+
+test the SET method
+-------------------
+
+lines 117 - 129    to  by hard coding values of buffer.
+
+keylength =  5    valuelength =  5   extras = 4 
+
+buffer[11] = 0xE; 
+
+key       = "Hello"   ( for example)
+value     = "World"
+
+
