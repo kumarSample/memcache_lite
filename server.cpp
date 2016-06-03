@@ -92,7 +92,7 @@ int main(int argc, char** argv) {
      char test[256];
    
      // For testing purposes
-     memCacheMap["Hello"] =  "world";
+     //memCacheMap["Hello"] =  "world";
      
      // create a socket
      // socket(int domain, int type, int protocol)
@@ -482,7 +482,19 @@ int main(int argc, char** argv) {
      //printf("Here is the message: %x  size of buffer %d \n",buffer[0],(int) strlen(buffer));
     }
      
+
+
+     if(buffer_key)
+         free(buffer_key);
      
+     if(buffer_key_value)
+         free(buffer_key_value);
+     
+     if(buffer_body)
+         free(buffer_body);
+ 
+     if(buffer_body_out)
+         free(buffer_body_out);     
      close(newsockfd);
      close(sockfd);
 
